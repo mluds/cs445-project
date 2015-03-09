@@ -1,6 +1,7 @@
 create table genres (
     id int not null auto_increment,
-    description varchar(255) not null,
+    name varchar(255) not null,
+    description text,
     primary key (id),
-    unique (description)
+    unique (name)
 );

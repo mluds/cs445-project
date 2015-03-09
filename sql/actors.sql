@@ -1,5 +1,6 @@
 create table actors (
     id int not null auto_increment,
-    name varchar(255) not null,
-    primary key (id)
+    pid int not null,
+    primary key (id),
+    foreign key (pid) references people(id)
 );
