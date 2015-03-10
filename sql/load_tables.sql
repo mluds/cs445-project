@@ -1,0 +1,22 @@
+DROP TABLE movies_actors;
+DROP TABLE movies_directors;
+DROP TABLE movies_producers;
+DROP TABLE actors;
+DROP TABLE producers;
+DROP TABLE directors;
+DROP TABLE people;
+DROP TABLE users;
+DROP TABLE genres;
+DROP TABLE movies;
+DROP TABLE mpaa_ratings;
+
+SOURCE /nfs/elsrv4/projects/cs445/FLP/cs445-project/sql/people.sql;
+SOURCE /nfs/elsrv4/projects/cs445/FLP/cs445-project/sql/actors.sql;
+SOURCE /nfs/elsrv4/projects/cs445/FLP/cs445-project/sql/directors.sql;
+SOURCE /nfs/elsrv4/projects/cs445/FLP/cs445-project/sql/producers.sql;
+SOURCE /nfs/elsrv4/projects/cs445/FLP/cs445-project/sql/users.sql;
+SOURCE /nfs/elsrv4/projects/cs445/FLP/cs445-project/sql/mpaa_ratings.sql;
+SOURCE /nfs/elsrv4/projects/cs445/FLP/cs445-project/sql/movies.sql;
+SOURCE /nfs/elsrv4/projects/cs445/FLP/cs445-project/sql/movies_actors.sql;
+SOURCE /nfs/elsrv4/projects/cs445/FLP/cs445-project/sql/movies_directors.sql;
+SOURCE /nfs/elsrv4/projects/cs445/FLP/cs445-project/sql/movies_producers.sql;
