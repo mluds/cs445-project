@@ -21,5 +21,7 @@ for (( i = ${#tables[@]}-1; i >= 0; i-- )); do
 done
 
 for t in ${tables[@]}; do
-    mysql -h cs445sql --user=$1 --password=$2 FLP -e "source sql/${t}.sql"
+    mysql -h cs445sql --user=$1 --password=$2 FLP -e sql/create_tables/${t}.sql
 done
+
+mysql -h cs445sql --user=$1 --password=$2 FLP -e sql/load_data.sql
