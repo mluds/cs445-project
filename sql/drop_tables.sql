@@ -1,15 +1,16 @@
-drop table ratings;
-drop table movies_genres;
-drop table movies_producers;
-drop table movies_directors;
-drop table movies_actors;
-drop table activities;
-drop table friends;
-drop table movies;
-drop table producers;
-drop table directors;
-drop table actors;
-drop table users;
-drop table mpaa_ratings;
-drop table genres;
-drop table people;
+drop table if exists
+     ratings,
+     movies_genres,
+     movies_producers,
+     movies_directors,
+     movies_actors,
+     activities,
+     friends,
+     movies,
+     producers,
+     directors,
+     actors,
+     users,
+     mpaa_ratings,
+     genres,
+     people

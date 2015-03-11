@@ -1,31 +1,13 @@
-tables=(
-    people
-    genres
-    mpaa_ratings
-    users
-    actors
-    directors
-    producers
-    movies
-    friends
-    activities
-    movies_actors
-    movies_directors
-    movies_producers
-    movies_genres
-    ratings
-)
+c1="mysql -h cs445sql --user=$1 --password=$2 FLP"
+c2="mysqlimport -h cs445sql --user=$1 --password=$2 -L FLP"
 
-for (( i = ${#tables[@]}-1; i >= 0; i-- )); do
-    mysql -h cs445sql --user=$1 --password=$2 FLP -e "drop table ${tables[i]}"
-done
+$c1 < sql/drop_tables.sql
+$c1 < sql/create_tables.sql
 
-for t in ${tables[@]}; do
-    mysql -h cs445sql --user=$1 --password=$2 FLP < sql/create_tables/${t}.sql
-done
+$c2 -c name data/people.txt
+$c2 data/tmp_actors.txt
+$c2 data/tmp_directors.txt
+$c2 data/tmp_producers.txt
 
-mysqlimport -h cs445sql --user=$1 --password=$2 -c name -L FLP testdata/people.txt
-mysqlimport -h cs445sql --user=$1 --password=$2 -c name -L FLP testdata/actors.txt
-mysqlimport -h cs445sql --user=$1 --password=$2 -c name -L FLP testdata/directors.txt
-mysqlimport -h cs445sql --user=$1 --password=$2 -c name -L FLP testdata/producers.txt
-
+$c1 < sql/convert_tables.sql
+$c1 < sql/drop_tmp_tables.sql

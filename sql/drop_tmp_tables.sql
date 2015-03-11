@@ -1,3 +1,4 @@
-drop table tmp_actors;
-drop table tmp_directors;
-drop table tmp_producers;
+drop table
+     tmp_actors,
+     tmp_directors,
+     tmp_producers
