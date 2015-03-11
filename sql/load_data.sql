@@ -1,1 +1,0 @@
-load data infile 'testdata/people.txt' into table people fields terminated by '\t' (name)

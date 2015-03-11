@@ -1,7 +1,8 @@
 create table people (
     id int not null auto_increment,
     name varchar(255) not null,
-    primary key (id)
+    primary key (id),
+    unique (name)
 );
 
 create table genres (
@@ -15,7 +16,8 @@ create table mpaa_ratings (
     id int not null auto_increment,
     rating varchar(255),
     description text,
-    primary key (id)
+    primary key (id),
+    unique (rating)
 );
 
 create table users (
@@ -37,11 +39,21 @@ create table actors (
     foreign key (pid) references people(id)
 );
 
+create table tmp_actors (
+    name varchar(255) not null,
+    unique (name)
+);
+
 create table directors (
     id int not null auto_increment,
     pid int not null,
     primary key (id),
     foreign key (pid) references people(id)
+);
+
+create table tmp_directors (
+    name varchar(255) not null,
+    unique (name)
 );
 
 create table producers (
@@ -51,6 +63,11 @@ create table producers (
     foreign key (pid) references people(id)
 );
 
+create table tmp_producers (
+    name varchar(255) not null,
+    unique (name)
+);
+
 create table movies (
     id int not null auto_increment,
     title varchar(255) not null,
@@ -58,7 +75,8 @@ create table movies (
     rid int not null,
     primary key (id),
     foreign key (rid) references mpaa_ratings(id),
-    constraint chk_year check (year > 1800)
+    constraint chk_year check (year > 1800),
+    unique (title, year)
 );
 
 create table friends (
