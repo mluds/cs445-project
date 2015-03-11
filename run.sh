@@ -21,7 +21,11 @@ for (( i = ${#tables[@]}-1; i >= 0; i-- )); do
 done
 
 for t in ${tables[@]}; do
-    mysql -h cs445sql --user=$1 --password=$2 FLP -e sql/create_tables/${t}.sql
+    mysql -h cs445sql --user=$1 --password=$2 FLP < sql/create_tables/${t}.sql
 done
 
-mysql -h cs445sql --user=$1 --password=$2 FLP -e sql/load_data.sql
+mysqlimport -h cs445sql --user=$1 --password=$2 -c name -L FLP testdata/people.txt
+mysqlimport -h cs445sql --user=$1 --password=$2 -c name -L FLP testdata/actors.txt
+mysqlimport -h cs445sql --user=$1 --password=$2 -c name -L FLP testdata/directors.txt
+mysqlimport -h cs445sql --user=$1 --password=$2 -c name -L FLP testdata/producers.txt
+
