@@ -6,10 +6,11 @@ $c1 < sql/create_tables.sql
 
 $c2 -c name data/people.txt
 $c2 -c rating,description data/mpaa_ratings.txt
+$c2 -c email,name,password,age,gender,location data/users.txt
 $c2 -c name data/tmp_actors.txt
 $c2 -c name data/tmp_directors.txt
 $c2 -c name data/tmp_producers.txt
-$c2 -c email,name,password,age,gender,location data/users.txt
+$c2 -c title,year,rating data/tmp_movies.txt
 $c2 -c email,title,year,rating data/tmp_ratings.txt
 
 $c1 < sql/convert_tables.sql

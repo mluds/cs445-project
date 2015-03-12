@@ -80,6 +80,9 @@ create table movies (
 );
 
 create table tmp_movies (
+    title varchar(255) not null,
+    year smallint,
+    rating varchar(255)
 );
 
 create table friends (
