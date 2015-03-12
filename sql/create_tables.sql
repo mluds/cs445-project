@@ -23,9 +23,9 @@ create table mpaa_ratings (
 create table users (
     id int not null auto_increment,
     email varchar(255) not null,
-    username varchar(255) not null,
-    pw_hash binary(60) not null,
-    dob date,
+    name varchar(255),
+    password varchar(255) not null,
+    age int,
     gender char(1),
     location varchar(255),
     primary key (id),
@@ -77,6 +77,9 @@ create table movies (
     foreign key (rid) references mpaa_ratings(id),
     constraint chk_year check (year > 1800),
     unique (title, year)
+);
+
+create table tmp_movies (
 );
 
 create table friends (
@@ -131,7 +134,15 @@ create table movies_genres (
 create table ratings (
     uid int not null,
     mid int not null,
+    rating smallint not null
     foreign key (uid) references users(id),
     foreign key (mid) references movies(id),
     unique (uid, mid)
+);
+
+create table tmp_ratings (
+    email varchar(255) not null,
+    title varchar(255) not null,
+    year smallint not null,
+    rating smallint not null
 );
