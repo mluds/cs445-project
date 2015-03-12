@@ -8,6 +8,7 @@ $c2 -c name data/people.txt
 $c2 data/tmp_actors.txt
 $c2 data/tmp_directors.txt
 $c2 data/tmp_producers.txt
+$c2 -c email, data/users.txt
 
 $c1 < sql/convert_tables.sql
 $c1 < sql/drop_tmp_tables.sql
