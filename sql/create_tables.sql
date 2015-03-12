@@ -41,6 +41,8 @@ create table actors (
 
 create table tmp_actors (
     name varchar(255) not null,
+    title varchar(255),
+    year smallint,
     unique (name)
 );
 
@@ -53,6 +55,8 @@ create table directors (
 
 create table tmp_directors (
     name varchar(255) not null,
+    title varchar(255),
+    year smallint,
     unique (name)
 );
 
@@ -65,6 +69,8 @@ create table producers (
 
 create table tmp_producers (
     name varchar(255) not null,
+    title varchar(255),
+    year smallint,
     unique (name)
 );
 
